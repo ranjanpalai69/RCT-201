@@ -1,0 +1,46 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    box-sizing: border-box;
+    
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+}
+
+.counter,.add-todo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+button,input{
+  padding: 5px 12px ;
+}
+button:hover{
+  cursor: pointer;
+}
+
+.todos{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.navbar{
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+margin-bottom: 50px;
+font-size: larger;
+font-weight: bolder;
+border-bottom: 2px solid black;
+padding: 15px 10px;
+}
