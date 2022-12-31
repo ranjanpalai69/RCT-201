@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "title": "Learn to swim",
+      "status": true,
+      "id": 6
+    },
+    {
+      "title": "Learn Typescript",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "Eat",
+      "status": true,
+      "id": 8
+    }
+  ]
+}
