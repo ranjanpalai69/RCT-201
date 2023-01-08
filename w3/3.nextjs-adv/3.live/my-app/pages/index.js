@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import axios from "axios";
 import  styles from "../styles/Home.module.css"
 import { useRouter } from 'next/router';
 export default function Home(props) {
@@ -45,8 +46,8 @@ export default function Home(props) {
 
 
 export async function getServerSideProps(){
-  let res=await fetch("http://localhost:8080/movies");
-  let data= await res.json();
+  let res=await axios.get("http://localhost:8080/movies");
+  let data= res.data;
   
   return{
     props:{

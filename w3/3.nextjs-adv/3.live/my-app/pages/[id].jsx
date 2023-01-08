@@ -1,4 +1,5 @@
 // import axios from 'axios';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import React from 'react'
 import styles from "../styles/Home.module.css"
@@ -7,18 +8,14 @@ const movie= ({movie}) => {
     console.log(movie);
       const postMovie=async (movie)=>{
          try {
-          const res=await fetch(`http://localhost:8080/wishlists`,{
-          method:"POST",
-          body:JSON.stringify(movie),
-          headers:{
-            "Content-Type":"application/json"
-          }
-         });
-         let data=await res.json();
+         const res=await axios.post(`http://localhost:8080/wishlists`,movie);
+         let data=res.data;
          console.log(data);
-
+         alert("Item added to wishlist")
          } catch (error) {
           console.log(error);
+          alert("Something went wrong");
+
          }
       }  
     

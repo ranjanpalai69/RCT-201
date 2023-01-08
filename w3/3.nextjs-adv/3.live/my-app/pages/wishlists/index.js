@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import React from 'react'
 import styles from "../../styles/Home.module.css";
@@ -5,15 +6,10 @@ const Wishlist = ({movies}) => {
     const router=useRouter();
     const deleteMovie=async(id)=>{
         try {
-            const res=await fetch(`http://localhost:8080/wishlists/${id}`,{
-            method:"DELETE",
-            headers:{
-                "Content-Type":"application/json",
-            }
-        });
-        const data=await res.json();
+        const res=await axios.delete(`http://localhost:8080/wishlists/${id}`);
+        const data=res.data;
         console.log(data);
-        router.push("/wishlists");
+        router.push(`/wishlists`);
 
         } catch (error) {
             console.log(error);
@@ -42,8 +38,8 @@ const Wishlist = ({movies}) => {
   )
 }
 export async function getServerSideProps(){
-    let res=await fetch("http://localhost:8080/wishlists");
-    let data= await res.json();
+    let res=await axios.get("http://localhost:8080/wishlists");
+    let data= res.data;
     
     return{
       props:{
